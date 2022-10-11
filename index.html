@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		거스를 수 없는
+	</title>
+	<style type="text/css">
+		@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+		div{
+
+  position: relative;
+  top: 38vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 1.3rem;
+  font-family: 'GyeonggiBatang';
+}
+
+	.text_box{
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.blink {
+  animation: blink 0.5s infinite;
+  font-size: 1.6rem;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+.disappear{ animation: disappear 5s 10s forwards;}
+@keyframes disappear { to{opacity: 0} }
+	</style>
+
+</head>
+<body>
+<div class="text_box disappear" data-trigger>
+  <span class="text"></span>
+  <span class="blink">|</span>
+</div>
+</body>
+<script type="text/javascript">
+	const content = "Thank you for \n appearing in my world.";
+const text = document.querySelector(".text");
+let i = 0;
+
+function typing(){
+    if (i < content.length) {
+    let txt = content.charAt(i);
+    text.innerHTML += txt;
+    i++;
+    }
+}
+
+setInterval(typing, 200)
+</script>
+</html>
